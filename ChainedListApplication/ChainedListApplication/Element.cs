@@ -23,6 +23,55 @@ namespace ChainedListApplication {
 
         #endregion
 
+        #region getter's/setter's
+        public string Name {
+            get {
+                return Name;
+            }
+            set {
+                Name = value;
+            }
+        }
+
+
+        public int Age {
+            get {
+                return Age;
+            }
+            set {
+                Age = value;
+            }
+        }
+
+        public char Sex {
+            get {
+                return Sex;
+            }
+            set {
+                Sex = value;
+            }
+        }
+
+        public Element Next {
+            get {
+                return Next;
+            }
+            set {
+                Next = value;
+            }
+        }
+
+        public Element Previous {
+            get {
+                return Previous;
+            }
+            set {
+                Previous = value;
+            }
+        }
+
+        #endregion
+
         #region constructors
         public Element(string name, int age, char sex)
         {
@@ -50,26 +99,8 @@ namespace ChainedListApplication {
             Next = n;
             Previous = p;
         }
-        #endregion
-        public string Name;
-        public int Age;
-        public char Sex;
-        public Element Next {
-            get {
-                return Next;
-            }
-            set {
-                Next = value;
-            }
-        }
 
-        public Element Previous {
-            get {
-                return Previous;
-            }
-            set {
-                Previous = value;
-            }
-        }
+        #endregion
+        
     }
 }
