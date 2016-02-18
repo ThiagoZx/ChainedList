@@ -16,7 +16,7 @@ namespace ChainedListApplication
             InitializeComponent();
         }
         
-        public class ChainedList {
+        public ChainedList list {
 
         }
     }

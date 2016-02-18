@@ -1,1 +1,5 @@
 C:\Users\Thiago\Documents\GitHub\ChainedList\ChainedListApplication\ChainedListApplication\bin\Debug\ChainedListApplication.exe.config
+C:\Users\Thiago.Torres\Desktop\GitHub\LinkedList\ChainedListApplication\ChainedListApplication\bin\Debug\ChainedListApplication.exe.config
+C:\Users\Thiago.Torres\Desktop\GitHub\ChainedList\ChainedListApplication\ChainedListApplication\bin\Debug\ChainedListApplication.exe.config
+C:\Users\Thiago.Torres\Desktop\GitHub\ChainedList\ChainedListApplication\ChainedListApplication\obj\Debug\ChainedListApplication.Properties.Resources.resources
+C:\Users\Thiago.Torres\Desktop\GitHub\ChainedList\ChainedListApplication\ChainedListApplication\obj\Debug\ChainedListApplication.csproj.GenerateResource.Cache
