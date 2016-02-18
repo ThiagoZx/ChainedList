@@ -15,5 +15,9 @@ namespace ChainedListApplication
         public Form1() {
             InitializeComponent();
         }
+        
+        public class ChainedList {
+
+        }
     }
 }
