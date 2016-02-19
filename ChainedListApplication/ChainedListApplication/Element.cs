@@ -13,60 +13,60 @@ namespace ChainedListApplication {
         
         #region properties 
 
-        private Element next;
+        private Element _next;
 
-        private string name;
-        private int age;
-        private char sex;
+        private string _name;
+        private int _age;
+        private char _sex;
 
-        private Element previous;
+        private Element _previous;
 
         #endregion
 
         #region getter's/setter's
         public string Name {
             get {
-                return Name;
+                return _name;
             }
             set {
-                Name = value;
+                _name = value;
             }
         }
 
 
         public int Age {
             get {
-                return Age;
+                return _age;
             }
             set {
-                Age = value;
+                _age = value;
             }
         }
 
         public char Sex {
             get {
-                return Sex;
+                return _sex;
             }
             set {
-                Sex = value;
+                _sex = value;
             }
         }
 
         public Element Next {
             get {
-                return Next;
+                return _next;
             }
             set {
-                Next = value;
+                _next = value;
             }
         }
 
         public Element Previous {
             get {
-                return Previous;
+                return _previous;
             }
             set {
-                Previous = value;
+                _previous = value;
             }
         }
 

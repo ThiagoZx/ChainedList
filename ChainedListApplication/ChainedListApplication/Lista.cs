@@ -9,7 +9,32 @@ using System.Threading.Tasks;
 /// </summary>
 
 namespace ChainedListApplication {
-	class ChainedList {
+	class ChainedList
+    {
 
-	}
+        #region element
+
+        private Element _element;
+        
+        #endregion
+
+        #region get/set
+
+        public Element Element {
+            get {
+                return _element;
+            }
+            set {
+                _element = value;
+            }
+        }
+
+        #endregion
+
+        #region functions
+
+
+
+        #endregion
+    }
 }
