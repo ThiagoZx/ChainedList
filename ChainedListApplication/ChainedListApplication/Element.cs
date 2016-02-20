@@ -101,6 +101,14 @@ namespace ChainedListApplication {
         }
 
         #endregion
-        
+
+        #region asString
+
+        public string asString () {
+            return "Hi! I'm " + Name + ", " + Age + " years old. Sex: " + Sex; 
+        }
+
+        #endregion
+
     }
 }
