@@ -4,10 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/// <summary>
-/// 
-/// </summary>
-
 namespace ChainedListApplication {   
 	class ChainedList
     {
@@ -38,7 +34,7 @@ namespace ChainedListApplication {
             if (element == null) {
                 return null;
             } else {
-                while (temp != null) {
+                while (temp.Next != null) {
                     if (aux == position) {
                         return temp;
                     } else {
@@ -79,15 +75,16 @@ namespace ChainedListApplication {
             }
         }
 
-        public void addAt (Element e, int position) {
+        public void addAtPostion (Element e, int position) {
+            if (position < this.count ()) {
 
-            Element temp = element;
-            int aux = 0;
+                Element temp = element;
+                int aux = 0;
 
-            if (temp == null) {
-                _element = e;
-            } else {
-                if (position < this.count ()) {
+                if (temp == null) {
+                    _element = e;
+                } else {
+                
                     while (aux != position) {
                         if (aux == position) {
 
@@ -100,7 +97,33 @@ namespace ChainedListApplication {
                             temp = temp.Next;
                         }
                         aux++;
+                    }     
+                }
+            } else {
+                Console.WriteLine ("Hey Buddy, That's a little bigger than our list!");
+            }
+        }
+
+        public void addAfterElement (Element e, string property) {
+            Element temp = element;
+            int aux = 0;
+
+            if (temp == null) {
+                _element = e;
+            } else {
+                while (temp.Next != null) {
+                    if (temp.asString () == property) {
+
+                        Element _temp = this.getElement (aux);
+                        temp.Next = e;
+                        e.Next = _temp;
+                        temp = e;
+
+                    } else {
+                        temp = temp.Next;
                     }
+
+                    aux++;
                 }
             }
         }
@@ -110,7 +133,7 @@ namespace ChainedListApplication {
         #region utilities
         public void asString () {
             Element temp = _element;
-            while (temp != null) {
+            while (temp.Next != null) {
                 Console.WriteLine (temp.asString ());
                 temp = temp.Next;
             }
@@ -121,7 +144,7 @@ namespace ChainedListApplication {
             Element temp = _element;
             int number = 0;
             
-            while (temp != null) {
+            while (temp.Next != null) {
                 number++;
                 temp = _element.Next;
             }
