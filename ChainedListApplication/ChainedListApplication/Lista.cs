@@ -58,14 +58,6 @@ namespace ChainedListApplication {
 
         #region functions
 
-        public Element _lastElement () {
-            Element temp = element;
-            while (temp.Next != null) {
-                temp = temp.Next;
-            }
-            return temp;
-        }
-
         public void addLast (Element e) {
 
             if (element == null) {
@@ -128,8 +120,31 @@ namespace ChainedListApplication {
             }
         }
 
+
+        public void changePos (Element e, int position) {
+            
+        }
+
+        public void changePos (Element e_1, Element e_2) {
+            
+        }
+
+        public void changePos (int position_1, int position_2) {
+
+        }
+
+        public void removeElement (string property) {
+
+        }
+
+        public void removeElement (int position) {
+
+        }
+
         #endregion
 
+
+        
         #region utilities
         public void asString () {
             Element temp = _element;
@@ -150,6 +165,14 @@ namespace ChainedListApplication {
             }
 
             return number;
+        }
+
+        public Element _lastElement () {
+            Element temp = element;
+            while (temp.Next != null) {
+                temp = temp.Next;
+            }
+            return temp;
         }
 
         #endregion
