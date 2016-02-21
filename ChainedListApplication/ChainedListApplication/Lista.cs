@@ -30,11 +30,33 @@ namespace ChainedListApplication {
             }
         }
 
+        public Element getElement (int position) {
+
+            Element temp = element;
+            int aux = 0;
+
+            if (element == null) {
+                return null;
+            } else {
+                while (temp != null) {
+                    if (aux == position) {
+                        return temp;
+                    } else {
+                        temp = temp.Next;
+                    }
+                    aux++;
+                }
+            }
+
+            return null;
+        }
+
         public Element lastElement {
             get {
                 return _lastElement ();
             }
         }
+
 
         #endregion
 
@@ -50,13 +72,36 @@ namespace ChainedListApplication {
 
         public void addLast (Element e) {
 
-            // I think it's a little bit weird the use of this conditional in here. if the name 
-            // of the void is addLast, why would you check for a first? Anyway...
-
             if (element == null) {
                 _element = e;
             } else {
                 lastElement.Next = e;
+            }
+        }
+
+        public void addAt (Element e, int position) {
+
+            Element temp = element;
+            int aux = 0;
+
+            if (temp == null) {
+                _element = e;
+            } else {
+                if (position < this.count ()) {
+                    while (aux != position) {
+                        if (aux == position) {
+
+                            Element _temp = this.getElement (position);
+                            temp.Next = e;
+                            e.Next = _temp;
+                            temp = e;
+
+                        } else {
+                            temp = temp.Next;
+                        }
+                        aux++;
+                    }
+                }
             }
         }
 
