@@ -89,7 +89,7 @@ namespace ChainedListApplication {
                             temp = temp.Next;
                         }
                         aux++;
-                    }     
+                    }
                 }
             } else {
                 Console.WriteLine ("Hey Buddy, That's a little bigger than our list!");
@@ -135,10 +135,38 @@ namespace ChainedListApplication {
 
         public void removeElement (string property) {
 
+            Element temp = element;
+
+            if (temp == null) {
+                Console.WriteLine ("Sorry but... The list is empty!");
+            } else {
+                while (temp.Next != null) {
+                    if (temp.Next.asString() == property) {
+                        temp.Next = temp.Next.Next;
+                    } else {
+                        temp = temp.Next;
+                    }
+                }
+            }
         }
 
         public void removeElement (int position) {
 
+            Element temp = element;
+            int aux = 0;
+
+            if (temp == null) {
+                Console.WriteLine ("Sorry but... The list is empty!");
+            } else {
+                while (temp.Next != null) {
+                    if (aux == position) {
+                        temp.Next = temp.Next.Next;
+                    } else {
+                        temp = temp.Next;
+                    }
+                    aux++;
+                }
+            }
         }
 
         #endregion
