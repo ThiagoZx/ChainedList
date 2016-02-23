@@ -11,7 +11,6 @@ namespace ChainedListApplication {
         #region properties
 
         private Element _element;
-        private int size = 0;
 
         #endregion
 
@@ -34,7 +33,7 @@ namespace ChainedListApplication {
             if (element == null) {
                 return null;
             } else {
-                while (temp.Next != null) {
+                while (temp != null) {
                     if (aux == position) {
                         return temp;
                     } else {
@@ -61,7 +60,7 @@ namespace ChainedListApplication {
         public void addLast (Element e) {
 
             if (element == null) {
-                _element = e;
+                element = e;
             } else {
                 lastElement.Next = e;
             }
@@ -103,7 +102,7 @@ namespace ChainedListApplication {
             if (temp == null) {
                 _element = e;
             } else {
-                while (temp.Next != null) {
+                while (temp != null) {
                     if (temp.asString () == property) {
 
                         Element _temp = this.getElement (aux);
@@ -125,7 +124,7 @@ namespace ChainedListApplication {
             Element temp = element;
             Element aux;
 
-            while (temp.Next != null) {
+            while (temp != null) {
                 if (temp.Next == e_1) {
                     aux = (temp.Next != null) ? temp.Next.Next : null;
                     temp.Next = e_2;
@@ -146,14 +145,11 @@ namespace ChainedListApplication {
             if (temp == null) {
                 Console.WriteLine ("Sorry but... The list is empty!");
             } else {
-                while (temp.Next != null) {
+                while (temp != null) {
                     if (temp.Next.asString() == property) {
-                        temp = temp.Next.Next;
-                        Element _temp = temp.Next;
-                        _temp = null;
-                    } else {
-                        temp = temp.Next;
-                    }
+                        temp.Next = (temp.Next != null) ? temp.Next.Next : null;
+                    } 
+                    temp = temp.Next;
                 }
             }
         }
@@ -166,14 +162,11 @@ namespace ChainedListApplication {
             if (temp == null) {
                 Console.WriteLine ("Sorry but... The list is empty!");
             } else {
-                while (temp.Next != null) {
+                while (temp != null) {
                     if (aux == position) {
-                        temp = temp.Next.Next;
-                        Element _temp = temp.Next;
-                        _temp = null;
-                    } else {
-                        temp = temp.Next;
+                        temp.Next = (temp.Next != null) ? temp.Next.Next : null;
                     }
+                    temp = temp.Next;
                     aux++;
                 }
             }
@@ -185,8 +178,13 @@ namespace ChainedListApplication {
         
         #region utilities
         public void asString () {
-            Element temp = _element;
-            while (temp.Next != null) {
+            Element temp = element;
+
+            if (temp == null) {
+                Console.WriteLine ("Nothing to see here.");
+            } 
+
+            while (temp != null) {
                 Console.WriteLine (temp.asString ());
                 temp = temp.Next;
             }
@@ -197,7 +195,7 @@ namespace ChainedListApplication {
             Element temp = _element;
             int number = 0;
             
-            while (temp.Next != null) {
+            while (temp != null) {
                 number++;
                 temp = _element.Next;
             }

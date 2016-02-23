@@ -10,3 +10,4 @@ C:\Users\Thiago\Documents\GitHub\ChainedList\ChainedListApplication\ChainedListA
 C:\Users\Thiago\Documents\GitHub\ChainedList\ChainedListApplication\ChainedListApplication\obj\Debug\ChainedListApplication.csproj.GenerateResource.Cache
 C:\Users\Thiago\Documents\GitHub\ChainedList\ChainedListApplication\ChainedListApplication\obj\Debug\ChainedListApplication.exe
 C:\Users\Thiago\Documents\GitHub\ChainedList\ChainedListApplication\ChainedListApplication\obj\Debug\ChainedListApplication.pdb
+C:\Users\Thiago\Documents\GitHub\ChainedList\ChainedListApplication\ChainedListApplication\obj\Debug\ChainedListApplication.Form1.resources
