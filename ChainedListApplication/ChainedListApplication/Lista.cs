@@ -120,17 +120,23 @@ namespace ChainedListApplication {
             }
         }
 
-
-        public void changePos (Element e, int position) {
-            
-        }
-
         public void changePos (Element e_1, Element e_2) {
-            
-        }
 
-        public void changePos (int position_1, int position_2) {
+            Element temp = element;
+            Element aux;
 
+            while (temp.Next != null) {
+                if (temp.Next == e_1) {
+                    aux = (temp.Next != null) ? temp.Next.Next : null;
+                    temp.Next = e_2;
+                    temp.Next.Next = aux;
+                } else if (temp.Next == e_2) {
+                    aux = (temp.Next != null) ? temp.Next.Next : null;
+                    temp.Next = e_1;
+                    temp.Next.Next = aux;
+                }
+                temp = temp.Next;
+            }
         }
 
         public void removeElement (string property) {
@@ -142,7 +148,9 @@ namespace ChainedListApplication {
             } else {
                 while (temp.Next != null) {
                     if (temp.Next.asString() == property) {
-                        temp.Next = temp.Next.Next;
+                        temp = temp.Next.Next;
+                        Element _temp = temp.Next;
+                        _temp = null;
                     } else {
                         temp = temp.Next;
                     }
@@ -160,7 +168,9 @@ namespace ChainedListApplication {
             } else {
                 while (temp.Next != null) {
                     if (aux == position) {
-                        temp.Next = temp.Next.Next;
+                        temp = temp.Next.Next;
+                        Element _temp = temp.Next;
+                        _temp = null;
                     } else {
                         temp = temp.Next;
                     }
