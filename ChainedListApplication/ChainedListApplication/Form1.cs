@@ -20,21 +20,26 @@ namespace ChainedListApplication
         Element Thiago = new Element ("Thiago", 17, 'M');
         Element Saulo = new Element ("Saulo", 26, 'M');
         Element Luiza = new Element ("Luiza", 18, 'F');
+        Element Marco = new Element ("Marco", 17, 'M');
 
         private void button1_Click (object sender, EventArgs e) {
             ChainedList lista = new ChainedList ();
             lista.addLast (Thiago);
             lista.addLast (Saulo);
+            lista.addLast (Marco);
+            lista.addAtPostion (Luiza, 3);
             lista.asString ();
-            lista.changePos (Thiago, Saulo);
-            lista.asString ();
-            lista.addAtPostion (Luiza, 1);
-            lista.asString ();
-            lista.removeElement (0);
-            lista.asString ();
-            Element Matheus = new Element("nefwio", 78, 'j');
-            lista.addAfterElement (Matheus, Luiza.asString ());
-            lista.asString ();
+            //Console.WriteLine ("Next!");
+            //lista.addAfterElement (Luiza, Thiago.asString());
+            //lista.asString ();
+            //Console.WriteLine ("Next!");
+            //lista.removeElement (0);
+            //lista.asString ();
+            //Console.WriteLine ("Next!");
+            //Element Matheus = new Element("nefwio", 78, 'j');
+            //lista.addAfterElement (Matheus, Luiza.asString ());
+            //lista.asString ();
+            //Console.WriteLine ("Done");
         }
 
         

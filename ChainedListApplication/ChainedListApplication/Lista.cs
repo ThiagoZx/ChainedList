@@ -67,28 +67,29 @@ namespace ChainedListApplication {
         }
 
         public void addAtPostion (Element e, int position) {
-            if (position < this.count ()) {
+            if (position <= this.count ()) {
 
                 Element temp = element;
                 int aux = 0;
 
-                if (temp == null) {
-                    _element = e;
+                if (position == 0) {
+                    element = e;
+                    e.Next = temp;
                 } else {
-                
-                    while (aux != position) {
-                        if (aux == position) {
 
-                            Element _temp = this.getElement (position);
-                            temp.Next = e;
-                            e.Next = _temp;
-                            temp = e;
+                    while (temp != null) {
 
-                        } else {
-                            temp = temp.Next;
-                        }
                         aux++;
+
+                        if (aux == position) {
+                            e.Next = temp.Next;
+                            temp.Next = e;
+                        }
+
+                        temp = temp.Next;
+                        
                     }
+
                 }
             } else {
                 Console.WriteLine ("Hey Buddy, That's a little bigger than our list!");
@@ -120,22 +121,38 @@ namespace ChainedListApplication {
         }
 
         public void changePos (Element e_1, Element e_2) {
+            
+            Element zero = new Element ("", 0, 'E');
+            zero.Next = element;
+            Element temp = zero;
 
-            Element temp = element;
+            Element e_1_copy = copy (e_1);
+            Element e_2_copy = copy (e_2);
             Element aux;
 
+            bool e1, e2;
+            e1 = e2 = false;
+
             while (temp != null) {
-                if (temp.Next == e_1) {
-                    aux = (temp.Next != null) ? temp.Next.Next : null;
-                    temp.Next = e_2;
+                if (temp.Next == e_1 && !e1) {
+                    aux = temp.Next.Next;
+                    //e_2_copy.Next = aux;
+                    temp.Next = e_2_copy;
                     temp.Next.Next = aux;
-                } else if (temp.Next == e_2) {
-                    aux = (temp.Next != null) ? temp.Next.Next : null;
-                    temp.Next = e_1;
+                    e1 = true;
+                } else if (temp.Next == e_2 && !e2) {
+                    aux = temp.Next.Next;
+                    //e_1_copy.Next = aux;
+                    temp.Next = e_1_copy;
                     temp.Next.Next = aux;
+                    e2 = true;
                 }
+
                 temp = temp.Next;
             }
+            
+            Console.WriteLine("Changed!");
+
         }
 
         public void removeElement (string property) {
@@ -145,7 +162,7 @@ namespace ChainedListApplication {
             if (temp == null) {
                 Console.WriteLine ("Sorry but... The list is empty!");
             } else {
-                while (temp != null) {
+                while (temp.Next != null) {
                     if (temp.Next.asString() == property) {
                         temp.Next = (temp.Next != null) ? temp.Next.Next : null;
                     } 
@@ -197,7 +214,7 @@ namespace ChainedListApplication {
             
             while (temp != null) {
                 number++;
-                temp = _element.Next;
+                temp = temp.Next;
             }
 
             return number;
@@ -209,6 +226,10 @@ namespace ChainedListApplication {
                 temp = temp.Next;
             }
             return temp;
+        }
+
+        private Element copy (Element e) {
+            return new Element (e.Name, e.Age, e.Sex, e.Next, e.Previous);
         }
 
         #endregion
