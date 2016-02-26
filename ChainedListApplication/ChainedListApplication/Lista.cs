@@ -97,25 +97,21 @@ namespace ChainedListApplication {
         }
 
         public void addAfterElement (Element e, string property) {
+
             Element temp = element;
-            int aux = 0;
 
             if (temp == null) {
-                _element = e;
+                Console.WriteLine ("List is Empty! Adding like to a new one anyway...");
+                element = e;
             } else {
                 while (temp != null) {
+
                     if (temp.asString () == property) {
-
-                        Element _temp = this.getElement (aux);
+                        e.Next = temp.Next;
                         temp.Next = e;
-                        e.Next = _temp;
-                        temp = e;
-
-                    } else {
-                        temp = temp.Next;
                     }
+                        temp = temp.Next;
 
-                    aux++;
                 }
             }
         }

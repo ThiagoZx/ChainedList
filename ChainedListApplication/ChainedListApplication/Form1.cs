@@ -27,7 +27,7 @@ namespace ChainedListApplication
             lista.addLast (Thiago);
             lista.addLast (Saulo);
             lista.addLast (Marco);
-            lista.addAtPostion (Luiza, 3);
+            lista.addAfterElement (Luiza, Marco.asString());
             lista.asString ();
             //Console.WriteLine ("Next!");
             //lista.addAfterElement (Luiza, Thiago.asString());
