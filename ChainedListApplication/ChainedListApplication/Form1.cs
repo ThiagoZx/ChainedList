@@ -28,8 +28,8 @@ namespace ChainedListApplication
             lista.addLast (Saulo);
             lista.addLast (Marco);
             lista.addAfterElement (Luiza, Marco.asString());
+            lista.removeElement (Luiza.asString());
             lista.asString ();
-            //Console.WriteLine ("Next!");
             //lista.addAfterElement (Luiza, Thiago.asString());
             //lista.asString ();
             //Console.WriteLine ("Next!");

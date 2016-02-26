@@ -132,13 +132,13 @@ namespace ChainedListApplication {
             while (temp != null) {
                 if (temp.Next == e_1 && !e1) {
                     aux = temp.Next.Next;
-                    //e_2_copy.Next = aux;
+                    e_2_copy.Next = aux;
                     temp.Next = e_2_copy;
                     temp.Next.Next = aux;
                     e1 = true;
                 } else if (temp.Next == e_2 && !e2) {
                     aux = temp.Next.Next;
-                    //e_1_copy.Next = aux;
+                    e_1_copy.Next = aux;
                     temp.Next = e_1_copy;
                     temp.Next.Next = aux;
                     e2 = true;
@@ -146,8 +146,6 @@ namespace ChainedListApplication {
 
                 temp = temp.Next;
             }
-            
-            Console.WriteLine("Changed!");
 
         }
 
@@ -157,32 +155,46 @@ namespace ChainedListApplication {
 
             if (temp == null) {
                 Console.WriteLine ("Sorry but... The list is empty!");
+            } else if(temp.asString() == property) {
+                element = temp.Next;
             } else {
                 while (temp.Next != null) {
-                    if (temp.Next.asString() == property) {
+
+                    if (temp.Next.asString () == property) {
                         temp.Next = (temp.Next != null) ? temp.Next.Next : null;
-                    } 
+                        break;
+                    }
+
                     temp = temp.Next;
+
                 }
             }
         }
 
         public void removeElement (int position) {
+            if (position <= this.count ()) {
 
-            Element temp = element;
-            int aux = 0;
+                Element temp = element;
+                int aux = 0;
 
-            if (temp == null) {
-                Console.WriteLine ("Sorry but... The list is empty!");
-            } else {
-                while (temp != null) {
-                    if (aux == position) {
-                        temp.Next = (temp.Next != null) ? temp.Next.Next : null;
+                if (temp == null) {
+                    Console.WriteLine ("Sorry but... The list is empty!");
+                } else if (position == 0) {
+                    element = temp.Next;
+                } else {
+                    while (temp != null) {
+
+                        aux++;
+
+                        if (aux == position) {
+                            temp.Next = (temp.Next != null) ? temp.Next.Next : null;
+                        }
+
+                        temp = temp.Next;
+
                     }
-                    temp = temp.Next;
-                    aux++;
                 }
-            }
+            } else { Console.WriteLine ("Hey Buddy, I can't remove what's not inside the limits of our list!"); }
         }
 
         #endregion
